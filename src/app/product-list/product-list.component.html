@@ -1,0 +1,18 @@
+<div>
+  <h2>Product List</h2>
+  <ul>
+    <li *ngFor="let product of products">
+      {{ product.title }} - ${{ product?.price }}
+      <p>{{product.description}}</p>
+      <button (click)="deleteProductList(product.id)">Delete</button>
+    </li>
+  </ul>
+</div>
+
+<div>
+  <h3>Add New Product</h3>
+  <input [(ngModel)]="newProduct.title" placeholder="Title">
+  <input [(ngModel)]="newProduct.price" placeholder="Price" type="number">
+  <input [(ngModel)]="newProduct.description" placeholder="Description">
+  <button (click)="addProductList()">Add Product</button>
+</div>
